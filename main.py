@@ -63,8 +63,12 @@ custom_strings = {
     "moody's": -4.0,
     "growing concern": -4.0,
     "financial distress": -4.0,
+    "arrest" : -4.0,
+    "arrested" : -4.0,
+    
 
     # Mild negatives (-2)
+    "theft" : -2.0,
     "debt": -2.0,
     "restructuring": -2.0,
     "debt restructuring": -2.0,
