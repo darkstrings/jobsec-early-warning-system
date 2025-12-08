@@ -65,6 +65,7 @@ custom_strings = {
     "financial distress": -4.0,
     "arrest" : -4.0,
     "arrested" : -4.0,
+    "felony" : -4.0,
     
 
     # Mild negatives (-2)
