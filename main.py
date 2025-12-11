@@ -57,6 +57,16 @@ custom_strings = {
     "insolvency filing": -0.8,
     "arrested": -0.8,
     "financial distress": -0.8,
+    "price increase" : -0.8,
+    "price hike" : -0.8,
+    "inflation" : -0.8,
+    "margin pressure" : -0.8,
+    "cost adjustment" : -0.8,
+    "shrinkflation" : -0.8,
+    "holiday pricing" : -0.8,
+    "dynamic pricing" : -0.8,
+    "special pricing" : -0.8,
+    "MSRP change" : -0.8,
 
     # Moderate negatives (-0.4)
     "moody's": -0.4,
