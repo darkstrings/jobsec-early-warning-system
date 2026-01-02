@@ -14,7 +14,7 @@ SMTP_PORT = int(os.environ.get("JOBSEC_EWS_SMTP_PORT"))
 EMAIL_ADDRESS = os.environ.get("JOBSEC_EWS_EMAIL_ADDRESS")
 EMAIL_PASSWORD = os.environ.get("JOBSEC_EWS_EMAIL_PASSWORD")  # app password
 ALERT_COMPANY = os.environ.get("JOBSEC_EWS_ALERT_COMPANY")
-# IF USING AN ENV VAR FOR THE REIPIENT LIST 
+# IF USING AN ENV VAR FOR THE RECIPIENT LIST 
 raw_recipients = os.environ.get("JOBSEC_EWS_ALERT_RECIPIENTS","")
 recipient_list = [addr.strip() for addr in raw_recipients.split(",") if addr.strip()]
 
