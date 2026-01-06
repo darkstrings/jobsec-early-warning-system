@@ -14,7 +14,7 @@ SMTP_PORT = int(os.environ.get("JOBSEC_EWS_SMTP_PORT"))
 EMAIL_ADDRESS = os.environ.get("JOBSEC_EWS_EMAIL_ADDRESS")
 EMAIL_PASSWORD = os.environ.get("JOBSEC_EWS_EMAIL_PASSWORD")  # app password
 ALERT_COMPANY = os.environ.get("JOBSEC_EWS_ALERT_COMPANY")
-# IF USING AN ENV VAR FOR THE RECIPIENT LIST 
+# IF USING AN ENV VAR FOR THE REIPIENT LIST
 raw_recipients = os.environ.get("JOBSEC_EWS_ALERT_RECIPIENTS","")
 recipient_list = [addr.strip() for addr in raw_recipients.split(",") if addr.strip()]
 
@@ -36,6 +36,7 @@ custom_strings = {
     "sick": 2.0,
     "fire": 2.0,
     "dope": 2.0,
+    "Monkey": 2.0,
 
     # Critical negatives (-10)
     "bankruptcy": -10.0,
@@ -55,18 +56,7 @@ custom_strings = {
     "chapter 7": -0.8,
     "fire sale": -0.8,
     "insolvency filing": -0.8,
-    "arrested": -0.8,
     "financial distress": -0.8,
-    "price increase" : -0.8,
-    "price hike" : -0.8,
-    "inflation" : -0.8,
-    "margin pressure" : -0.8,
-    "cost adjustment" : -0.8,
-    "shrinkflation" : -0.8,
-    "holiday pricing" : -0.8,
-    "dynamic pricing" : -0.8,
-    "special pricing" : -0.8,
-    "MSRP change" : -0.8,
 
     # Moderate negatives (-0.4)
     "moody's": -0.4,
@@ -79,6 +69,9 @@ custom_strings = {
     # Mild negatives (-0.2)
     "theft": -0.2,
     "debt": -0.2,
+    "stolen": -0.2,
+    "suspects": -0.2,
+    "cops": -0.2,
     "restructuring": -0.2,
     "debt restructuring": -0.2,
     "restructuring plan": -0.2,
