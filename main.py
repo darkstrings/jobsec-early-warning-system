@@ -158,17 +158,17 @@ def get_data():
         elif compound < -0.4:
             severity = "⚠️ Moderately Negative"
             print(f"{severity} sentiment detected:", entry.title)
-            send_email_alert(
-            subject=f"Jobsec Early Warning System Advisory: Severity {severity}",
-            body=f"Possibly {severity} sentiment detected:\nTITLE: {entry.title}\nSOURCE: {entry.link}"
-            )
+            # send_email_alert(
+            # subject=f"Jobsec Early Warning System Advisory: Severity {severity}",
+            # body=f"Possibly {severity} sentiment detected:\nTITLE: {entry.title}\nSOURCE: {entry.link}"
+            # )
         elif compound < -0.2:
             severity = "Mildly Negative"
             print(f"{severity} sentiment detected:", entry.title)
-            send_email_alert(
-            subject=f"Jobsec Early Warning System Advisory: Severity {severity}",
-            body=f"{severity} sentiment detected:\nTITLE: {entry.title}\nSOURCE: {entry.link}"
-            )
+            # send_email_alert(
+            # subject=f"Jobsec Early Warning System Advisory: Severity {severity}",
+            # body=f"{severity} sentiment detected:\nTITLE: {entry.title}\nSOURCE: {entry.link}"
+            # )
         elif compound > 0.6:
             severity = "Highly Positive"
         elif compound > 0.4:
