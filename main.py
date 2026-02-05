@@ -1,4 +1,5 @@
-import smtplib, requests, os, feedparser, re, pytz
+import smtplib, requests, os, feedparser, re, pytz, datetime
+from datetime import timedelta
 from datetime import datetime
 from email.mime.text import MIMEText
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
@@ -83,7 +84,8 @@ custom_strings = {
     "restructuring": -0.2,
     "debt restructuring": -0.2,
     "restructuring plan": -0.2,
-    "cash crunch": -0.2
+    "cash crunch": -0.2,
+    "police": -0.2,
 }
 
 
@@ -142,10 +144,15 @@ def get_data():
     count = 0
     print("DATA START")
     for entry in feed.entries[:15]:
+        published_dt = datetime(*entry.published_parsed[:6])
+        cutoff = datetime.now() - timedelta(days=10)
+        if published_dt < cutoff:
+            continue
         print(entry.title)
         print(entry.link)
         print(entry.published)
         print(entry.summary)
+        print("______________________________")
         text = f"{entry.title} {entry.summary}".lower()
         score = analyzer.polarity_scores(text)
         compound = score["compound"]
