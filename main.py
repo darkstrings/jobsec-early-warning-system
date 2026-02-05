@@ -61,12 +61,20 @@ custom_strings = {
     # Moderate negatives (-0.4)
     "moody's": -0.4,
     "concern": -0.4,
-    "arrest": -0.4,
-    "arrested": -0.4,
-    "felony": -0.4,
     "scheme": -0.4,
+    "inventory reduction": -0.4,
+    "clearance event": -0.4,
+    "markdown strategy": -0.4,
+    "inventory optimization": -0.4,
+    "seasonal clearance": -0.4,
+    "storewide clearance": -0.4,
+    "excess inventory": -0.4,
+
 
     # Mild negatives (-0.2)
+    "arrest": -0.2,
+    "arrested": -0.2,
+    "felony": -0.2,
     "theft": -0.2,
     "debt": -0.2,
     "stolen": -0.2,
@@ -158,10 +166,10 @@ def get_data():
         elif compound < -0.4:
             severity = "⚠️ Moderately Negative"
             print(f"{severity} sentiment detected:", entry.title)
-            # send_email_alert(
-            # subject=f"Jobsec Early Warning System Advisory: Severity {severity}",
-            # body=f"Possibly {severity} sentiment detected:\nTITLE: {entry.title}\nSOURCE: {entry.link}"
-            # )
+            send_email_alert(
+            subject=f"Jobsec Early Warning System Advisory: Severity {severity}",
+            body=f"Possibly {severity} sentiment detected:\nTITLE: {entry.title}\nSOURCE: {entry.link}"
+            )
         elif compound < -0.2:
             severity = "Mildly Negative"
             print(f"{severity} sentiment detected:", entry.title)
