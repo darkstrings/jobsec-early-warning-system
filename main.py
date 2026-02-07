@@ -1,6 +1,7 @@
-import smtplib, requests, os, feedparser, re, pytz, datetime
+import smtplib, requests, os, feedparser, re, pytz
+import smtplib, requests, os, feedparser, re, pytz
+from datetime import datetime, timedelta
 from datetime import timedelta
-from datetime import datetime
 from email.mime.text import MIMEText
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 from urllib.parse import quote_plus
