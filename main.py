@@ -179,10 +179,10 @@ def get_data():
         elif compound < -0.2:
             severity = "Mildly Negative"
             print(f"{severity} sentiment detected:", entry.title)
-            # send_email_alert(
-            # subject=f"Jobsec Early Warning System Advisory: Severity {severity}",
-            # body=f"{severity} sentiment detected:\nTITLE: {entry.title}\nSOURCE: {entry.link}"
-            # )
+            send_email_alert(
+            subject=f"Jobsec Early Warning System Advisory: Severity {severity}",
+            body=f"{severity} sentiment detected:\nTITLE: {entry.title}\nSOURCE: {entry.link}"
+            )
         elif compound > 0.6:
             severity = "Highly Positive"
         elif compound > 0.4:
@@ -198,7 +198,9 @@ def get_data():
         count += 1
         avg_compound = net_negative / count
 
-
+    if count == 0:
+        print("No recent articles found in the last 10 days.")
+        return
     print("DATA END", data_time)
     print("Overall average sentiment:", avg_compound)
 get_data()
