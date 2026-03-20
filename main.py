@@ -144,7 +144,8 @@ def get_data():
     print("DATA START")
     for entry in feed.entries[:15]:
         published_dt = datetime(*entry.published_parsed[:6])
-        cutoff = datetime.now() - timedelta(days=10)
+        cutoff = datetime.now() - timedelta(days=30)
+
         if published_dt < cutoff:
             continue
         print(entry.title)
